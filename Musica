@@ -99,5 +99,5 @@ if choice == "1":
             if name not in playlists:
                 print("Playlist not found!")
                 continue
-
+while True:
 
