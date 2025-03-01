@@ -105,4 +105,18 @@ print(f"\nEditing Playlist: {name}")
                 print("Options: 1. Add Song 2. Remove Song 3. Reposition Song 4. Back")
                 edit_choice = input("Enter choice: ").strip()
 
-  if edit_choice == "1":
+if edit_choice == "1":
+                    print("\nAvailable Songs:")
+                    for idx, (file, _) in enumerate(music_files, start=1):
+                        print(f"{idx}. {file}")
+                    song_choice = input("Enter song number to add: ").strip()
+                    if song_choice.isdigit() and 1 <= int(song_choice) <= len(music_files):
+                        song_name = music_files[int(song_choice) - 1][0]
+                        if song_name not in playlists[name]:
+                            playlists[name].append(song_name)
+                            print(f"{song_name} added to playlist.")
+                        else:
+                            print(f"{song_name} is already in the playlist.")
+                    else:
+                        print("Invalid choice.")
+
