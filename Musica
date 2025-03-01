@@ -77,3 +77,12 @@ def play_playlist(playlist_name, playlists, folder_path):
             continue
         play_song(file_path)
 
+def manage_playlists(playlists, music_files):
+    """Manages playlists by allowing users to create, edit, and delete them."""
+    while True:
+        print("\nPlaylists:")
+        for idx, name in enumerate(playlists.keys(), start=1):
+            print(f"{idx}. {name}")
+        print("Options: 1. Create 2. Edit 3. Delete 4. View Songs 5. Back")
+        choice = input("Enter choice: ").strip()
+
